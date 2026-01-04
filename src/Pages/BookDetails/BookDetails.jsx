@@ -6,8 +6,8 @@ const BookDetails = () => {
     const bookDetail = books.find(book => book.bookId === parseInt(id));
     const { bookName, image, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = bookDetail;
     return (
-        <div className='grid grid-cols-2 gap-7 mb-41 mt-5'>
-            <div className='bg-[rgba(19,19,19,0.05)] p-18.25 flex justify-center rounded-xl'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 mb-41 mt-5'>
+            <div className='bg-[rgba(19,19,19,0.05)] p-10 sm:p-18.25 flex justify-center rounded-xl'>
                 <img className='h-111' src={image} alt="" />
             </div>
             <div>
