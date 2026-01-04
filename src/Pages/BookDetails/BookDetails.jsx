@@ -1,10 +1,15 @@
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoredDB } from '../../Utilities/addToDB';
 
 const BookDetails = () => {
     const books = useLoaderData();
     const { id } = useParams();
     const bookDetail = books.find(book => book.bookId === parseInt(id));
     const { bookName, image, author, category, review, tags, totalPages, publisher, yearOfPublishing, rating } = bookDetail;
+
+    const handleMarkAsRead=(id)=>{
+        addToStoredDB(id);
+    }
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 mb-41 mt-5'>
             <div className='bg-[rgba(19,19,19,0.05)] p-10 sm:p-18.25 flex justify-center rounded-xl'>
@@ -30,9 +35,9 @@ const BookDetails = () => {
                     <p className='work-sans text-[14px] font-bold'><span className='opacity-50'>Year of Publishing: </span>{yearOfPublishing}</p>
                     <p className='work-sans text-[14px] font-bold'><span className='opacity-50'>Rating: </span>{rating}</p>
                 </div>
-                <div>
-                    <a className="btn work-sans sm:text-[13px] font-semibold bg-white rounded-xl">Read</a>
-                    <a className="btn work-sans sm:text-[13px] font-semibold bg-[#59C6D2] text-white border-none rounded-xl">Wishlist</a>
+                <div className='flex gap-5'>
+                    <button onClick={()=>handleMarkAsRead(id)} className="btn work-sans sm:text-[13px] font-semibold bg-white rounded-xl">Mark as read</button>
+                    <button className="btn work-sans sm:text-[13px] font-semibold bg-[#59C6D2] text-white border-none rounded-xl">Add to Wishlist</button>
                 </div>
             </div>
         </div>
