@@ -3,10 +3,10 @@ import { Link } from 'react-router';
 
 const Navbar = () => {
     const links = <>
-        <Link to="/"><li><a className='work-sans font-normal text-[#838282]'>Home</a></li></Link>
-        <Link to="/about"><li><a className='work-sans font-normal text-[#838282]'>About</a></li></Link>
-        <li><a className='work-sans font-normal text-[#838282]'>Listed Books</a></li>
-        <li><a className='work-sans font-normal text-[#838282]'>Page to Read</a></li>
+        <Link to="/"><li><button className='work-sans font-normal text-[#838282]'>Home</button></li></Link>
+        <Link to="/about"><li><button className='work-sans font-normal text-[#838282]'>About</button></li></Link>
+        <li><button className='work-sans font-normal text-[#838282]'>Listed Books</button></li>
+        <li><button className='work-sans font-normal text-[#838282]'>Page to Read</button></li>
     </>
     return (
         <div className="navbar bg-base-100 ">
@@ -21,7 +21,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-[22px] font-bold work-sans">Book Vibe</a>
+                <a className="text-[22px] font-bold work-sans">Book Vibe</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
