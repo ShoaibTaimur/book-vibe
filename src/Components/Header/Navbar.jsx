@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Navbar = () => {
     const links = <>
-        <li><a className='work-sans font-normal text-[#838282]'>Home</a></li>
+        <Link to="/"><li><a className='work-sans font-normal text-[#838282]'>Home</a></li></Link>
+        <Link to="/about"><li><a className='work-sans font-normal text-[#838282]'>About</a></li></Link>
         <li><a className='work-sans font-normal text-[#838282]'>Listed Books</a></li>
         <li><a className='work-sans font-normal text-[#838282]'>Page to Read</a></li>
     </>
